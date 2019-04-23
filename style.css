@@ -1,0 +1,360 @@
+/*
+==================================================
+Markdown Previewer CSS
+==================================================
+Base Styles
+--------------------------------------------------
+file:     style.css
+version:  1.0
+date:     22 June 2018
+author:   Stephen Bau
+url:      https://codepen.io/bauhouse/
+--------------------------------------------------
+
+
+--------------------------------------------------
+Table of Contents
+--------------------------------------------------
+
+
+BASE STYLES
+--------------------------------------------
+
+   1  ELEMENTS
+       1.1  Root Element
+   2  TYPOGRAPHY
+       2.1  Fonts
+   3  LAYOUT
+       3.1  Default Page Structure
+   4  CONTENT
+       4.1  Images
+   5  COLORS
+       5.1  Anchors
+   6  MEDIA QUERIES
+
+
+--------------------------------------------------
+*/
+
+
+
+
+
+/*
+==================================================
+
+1   ELEMENTS
+
+==================================================
+*/
+
+/*
+--------------------------------------------------
+1.1   Root Element
+-------------------------------------------------- */
+
+
+/*
+==================================================
+
+2   TYPOGRAPHY
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+2.1   Fonts
+-------------------------------------------------- */
+body {
+  font: normal 100%/1.5em helvetica, arial, sans-serif;
+  overflow-x: hidden;
+}
+
+
+/*
+--------------------------------------------------
+2.2   Headings
+-------------------------------------------------- */
+h1 {font-size: 2.6em;}
+h2 {font-size: 2.2em;}
+h3 {font-size: 1.8em;}
+h4 {font-size: 1.6em;}
+h5 {font-size: 1.4em;}
+h6 {font-size: 1.2em;}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin-bottom: .5em;
+  line-height: 1.2em;
+  color: #000;
+}
+
+
+
+
+/*
+==================================================
+
+3   LAYOUT
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+3.1   Default Page Structure
+-------------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/*
+--------------------------------------------------
+3.4   Code
+-------------------------------------------------- */
+
+
+/*
+--------------------------------------------------
+3.6   Preview Panel
+-------------------------------------------------- */
+#preview {
+
+}
+
+
+/*
+==================================================
+
+4   CONTENT
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+4.1   Buttons
+-------------------------------------------------- */
+button {
+  font-size: 1em;
+  font-weight: normal;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 10%;
+}
+
+#btn-markdown {
+
+}
+
+#btn-preview {
+  left: 50%;
+}
+
+
+#editor,
+.preview-pane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50%;
+  padding: 2em;
+  box-sizing: border-box;
+}
+
+.preview-pane {
+  top: 50%;
+  overflow: scroll;
+}
+
+
+
+
+/*
+==================================================
+
+5   COLORS
+
+==================================================
+*/
+
+
+/*
+--------------------------------------------------
+5.1   Anchors
+-------------------------------------------------- */
+a {
+  text-decoration: none;
+}
+
+
+#panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  overflow: hidden;
+}
+
+/*
+--------------------------------------------------
+5.4   Buttons
+-------------------------------------------------- */
+button {
+  color: #fff;
+  background: #444;
+  border: 1px solid #000;
+}
+
+button:hover {
+  background: #333;
+}
+
+button:active {
+  background: #222;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button.select:hover {
+  background: #06c;
+}
+
+button.select,
+button.select:active {
+  background: DodgerBlue;
+}
+
+/*
+--------------------------------------------------
+5.5   Editor
+-------------------------------------------------- */
+
+#editor,
+.preview-pane {
+  border: 1px solid #000;
+}
+
+textarea {
+  margin: 0;
+  font-family: Menlo, Monaco, consolas, monospace;
+  color: LimeGreen;
+  font-size: .9em;
+  line-height: 1.8em;
+  background: black;
+  border: 0;
+  resize: none;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -webkit-border-radius:0;
+  border-radius:0;
+}
+
+/*
+==================================================
+
+6   MEDIA QUERIES
+
+==================================================
+*/
+
+
+.preview .preview-pane {
+  height: 100%;
+  top: 0;
+  background: white;
+}
+
+.markdown #editor {
+  height: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+/*
+--------------------------------------------------
+6.1   Large Screens
+-------------------------------------------------- */
+@media (orientation: landscape) {
+
+ #editor,
+  .preview-pane {
+    width: 50%;
+    height: 100%;
+  }
+
+  .preview-pane {
+    top: 0;
+    left: 50%;
+  }
+
+  .preview .preview-pane {
+    width: 100%;
+    left: 0;
+    background: white;
+  }
+
+  .markdown #editor {
+    width: 100%;
+    left: 0;
+    z-index: 2;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  button {
+    font-size: 1.6em;
+  }
+
+  #panel {
+    top: 10%;
+    bottom: 0;
+  }
+
+  .button {
+    top: 0;
+    bottom: auto;
+  }
+
+}
